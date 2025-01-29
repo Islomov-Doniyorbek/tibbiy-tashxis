@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulator Tibbiy Karta</title>
+    <link rel="stylesheet" href="/ambulance.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="left">
+                <p>O'zbekiston Respublikasi <br>
+                    Sog'liqni saqlash vazirligi</p>
+            </div>
+            <div class="right">
+                <p>O'zbekiston Respublikasi <br>
+                    Sog'liqni saqlash vazirligi <br>
+                    2022 yil 17 yanvardagi №15 sonli <br>
+                    buyrug'i bilan tasdiqlangan <br>
+                    025 shaklli tibbiy hujjat shakli</p>
+            </div>
+        </header>
+        <h1>Bemorning elektron tibbiy kartasi</h1>
+        <table>
+            <tr>
+                <td>1. Familiya, ismi:</td>
+                <td>Damirov Halil Jalilovich</td>
+            </tr>
+            <tr>
+                <td>2. Tug'ilgan sana/oy/yil:</td>
+                <td>01.01.1990</td>
+            </tr>
+            <tr>
+                <td>3. Jinsi:</td>
+                <td>Erkak</td>
+            </tr>
+            <tr>
+                <td>4. Yashash joyi:</td>
+                <td>Toshkent, Yangiyo'l</td>
+            </tr>
+            <tr>
+                <td>5. Qo'ng'iroq uchun telefon:</td>
+                <td>+998 90 123 45 67</td>
+            </tr>
+            <tr>
+                <td>7. Vaqtincha yashash joyi:</td>
+                <td>--------</td>
+            </tr>
+            <tr>
+                <td>8. Ro'yxatga olish sanasi:</td>
+                <td>01.01.2024</td>
+            </tr>
+            <tr>
+                <td>9. Ro'yxatdan chiqish sanasi:</td>
+                <td>--------</td>
+            </tr>
+        </table>
+        <h2>Qon guruhi</h2>
+        <p>III guruh musbat</p>
+        <h2>Muhim belgilari</h2>
+        <p>Mavjud emas</p>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Tashxislar</h2>
+        <div class="wrapper">
+            <table>
+                <tr>
+                    <td>Tashxis raqami:</td>
+                    <td>0001</td>
+                </tr>
+                <tr>
+                    <td>Murojaat etgan sana: </td>
+                    <td>12.10.2024</td>
+                </tr>
+                <tr>
+                    <td>Qo'yilgan tashxis</td>
+                    <td>O'RVi</td>
+                </tr>
+                <tr>
+                    <td>Davolanish davri</td>
+                    <td>5 kun</td>
+                </tr>
+                <tr>
+                    <td>Tavsiya berilgan dorilar</td>
+                    <td>Atsiklover 200mg</td>
+                </tr>
+                <tr>
+                    <td>Shifokor ism, familiyasi</td>
+                    <td>Rahimova Rohila Raxmatovna</td>
+                </tr>
+                <tr>
+                    <td>Kasbi</td>
+                    <td>Bolalar shifokori</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>Tashxis raqami:</td>
+                    <td>0002</td>
+                </tr>
+                <tr>
+                    <td>Murojaat etgan sana: </td>
+                    <td>11.10.2024</td>
+                </tr>
+                <tr>
+                    <td>Qo'yilgan tashxis</td>
+                    <td>Bronxit</td>
+                </tr>
+                <tr>
+                    <td>Davolanish davri</td>
+                    <td>9 kun</td>
+                </tr>
+                <tr>
+                    <td>Tavsiya berilgan dorilar</td>
+                    <td>Anaferon 200mg, Brongeksin 200mg</td>
+                </tr>
+                <tr>
+                    <td>Shifokor ism, familiyasi</td>
+                    <td>Rahimova Rohila Raxmatovna</td>
+                </tr>
+                <tr>
+                    <td>Kasbi</td>
+                    <td>Bolalar shifokori</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let wrapper = document.querySelector(".wrapper");
+
+        let info = JSON.parse(localStorage.getItem('tashxislar'));
+        let doktor = ["Raximova Rohila Latipovna", "Djumayev Bakir Halilovich", "Shoirov Toir Zahidovich"];
+        console.log(doktor);
+        let n = info.length;
+        for (let i = 0; i < n; i++) {
+            wrapper.innerHTML += `
+            <table>
+                <tr>
+                    <td>Tashxis raqami:</td>
+                    <td>${info[i].nomer}</td>
+                </tr>
+                <tr>
+                    <td>Murojaat etgan sana: </td>
+                    <td>${info[i].time}</td>
+                </tr>
+                <tr>
+                    <td>Qo'yilgan tashxis</td>
+                    <td>${info[i].tashxis}</td>
+                </tr>
+                <tr>
+                    <td>Davolanish davri</td>
+                    <td>${info[i].duration}</td>
+                </tr>
+                <tr>
+                    <td>Tavsiya berilgan dorilar</td>
+                    <td>${info[i].dori}</td>
+                </tr>
+                <tr>
+                    <td>Shifokor ism, familiyasi</td>
+                    <td>${info[i].doktor}</td>
+                </tr>
+                <tr>
+                    <td>Kasbi</td>
+                    <td>${info[i].yunalish}</td>
+                </tr>
+            </table>
+            `
+        }
+    </script>
+</body>
+</html>

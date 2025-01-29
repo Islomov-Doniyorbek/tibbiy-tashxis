@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+a * {
+    text-decoration: none;
+    color: black;
+}
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.row {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+}
+.row .wrapper {
+    position: relative;
+    width: 100%;
+    /* padding: 15px; */
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+.wrapper button {
+    position: relative;
+    padding: 5px 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000069;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
